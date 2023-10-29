@@ -1,0 +1,51 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>ingresoviaje</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding" color="dark" >
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Ingreso de viaje </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-grid>
+    
+    <ion-row> 
+      <ion-col id="col1" sizeLg="12" sizeMD="12" sizeXs="12" >
+
+        
+      </ion-col>
+      <ion-col sizeLg="12" sizeMD="12" sizeXs="12" >
+        <div id="div-fondo">
+          <div>
+            <ion-input class="center-content" label="origen" [(ngModel)]="travelinfo.origen"  ></ion-input>
+            <ion-input class="center-content" label="Destino" [(ngModel)]="travelinfo.destino"></ion-input>
+            <ion-input class="center-content" label="metodo de pago" [(ngModel)]="travelinfo.metodopago" ></ion-input>
+          
+          </div>
+          <div>
+            <!--
+              Navigación con una función.
+            -->
+            <ion-button expand="block" color="dark" (click)="volverinicio()" >
+              volver inicio
+            </ion-button>
+            <ion-button expand="block" color="dark" (click)="ingresarviaje()" >
+             ingresar datos
+            </ion-button>
+          </div>
+          <div>
+            <!--
+              Navegación via HTML. 
+            -->
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+
+</ion-content>
