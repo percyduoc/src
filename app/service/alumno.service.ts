@@ -19,11 +19,11 @@ export class AlumnoService {
 
 }
 getAlumnos(): Observable<any> {
-  const url = "https://rpxrcdcsnkzjlihiydjl.supabase.co/rest/v1/Pasajero?select=*"
+  const url = "https://rpxrcdcsnkzjlihiydjl.supabase.co/rest/v1/Pasajero"
   const headers = new HttpHeaders({
     'apikey': environment.supabaseKey,
-    'Authorization': `Bearer ${environment.supabaseKey}`,
-    'Range': '0-9'
+    'Authorization': `Bearer ${environment.supabaseKey}`
+   
   });
 
   const params = {

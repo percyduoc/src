@@ -36,5 +36,8 @@ export class AlumnoPage implements OnInit {
   ingresarviaje(){
     this.router.navigate(['/ingresoviaje']);
   }
+  viaje(){
+    this.router.navigate(['/viaje']);
+  }
   
 }

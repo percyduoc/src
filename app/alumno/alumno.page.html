@@ -4,13 +4,16 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true" color="light">
+<ion-content class="fondo" [fullscreen]="true" >
 
   <h1 class="center-content" style="padding-bottom: 50px">Bienvenido {{ alumnoInfoReceived?.name }}</h1>
   <ion-list [inset]="true">
     <ion-list-header>
-      <ion-label>Alumno Information: </ion-label>
+      <ion-label>Pasajero Information: </ion-label>
     </ion-list-header>
+    <ion-avatar>
+      <img alt="avatar" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+    </ion-avatar>
     <ion-item>
       <ion-label>Nombre de usuario: {{ alumnoInfoReceived?.username }}</ion-label>
     </ion-item>
@@ -30,6 +33,10 @@
     <ion-button expand="block" color="dark" (click)="ingresarviaje()" >
       ingresar viaje 
     </ion-button>
+    <ion-button expand="block" color="dark" (click)=" viaje()" >
+      mostrar viaje
+    </ion-button>
+  
   </ion-list>
 
   

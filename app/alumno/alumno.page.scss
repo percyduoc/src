@@ -1,0 +1,16 @@
+ion-avatar {
+    --border-radius: 4px;
+    text-align: center;
+    margin-left: 8rem;
+  }
+
+.fondo  {
+    background-image: url(../../assets/login-img/descarga.jpeg);
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    background-position: center;
+    height: 30vh; 
+    border-radius: 1rem;
+}

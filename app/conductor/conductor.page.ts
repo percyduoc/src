@@ -16,15 +16,19 @@ export class ConductorPage implements OnInit {
 
   conductorInfoReceived: UserModel | undefined;
 
-  constructor(private r: Router) {
-    this.conductorInfoReceived = this.r.getCurrentNavigation()?.extras.state?.['user'];
+  constructor(private router: Router) {
+    this.conductorInfoReceived = this.router.getCurrentNavigation()?.extras.state?.['user'];
    }
 
   ngOnInit() {
   }
   volverinicio(){
-    this.r.navigate(['/login']);
+    this.router.navigate(['/login']);
   }
+  auto(){
+    this.router.navigate(['/auto']);
+  }
+  
   
 
 }

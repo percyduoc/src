@@ -34,7 +34,7 @@ export class LoginPage implements OnInit {
     this.userLoginModalRestart();
     this.listalumno = await firstValueFrom(this.alumnoService.getAlumnos());
     this.listUser = await firstValueFrom(this.usuarioService.getusuario());
-    console.log("lista usuario", this.listUser,this.listalumno)
+    console.log("lista usuario", this.listUser)
 
 
   }
