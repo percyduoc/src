@@ -2,8 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
-import { Router, NavigationExtras } from '@angular/router';
-import { IViaje } from '../models/IViaje';
+import { Router } from '@angular/router';
+import { ViajesService } from '../service/viajes.service';
+import { firstValueFrom } from 'rxjs';
 
 
 @Component({
@@ -15,50 +16,50 @@ import { IViaje } from '../models/IViaje';
 })
 export class IngresoviajePage implements OnInit {
 
-  travelinfo: IViaje = {
+  
+  nuevoViaje: any = {
     id: null,
     origen: '',
     destino: '',
     id_pasajero: null,
-    metodopago:'',
-
+    metodopago:''
   };
+  listViaje: any;
+  
+  
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private viajesService: ViajesService) { }
 
-  ngOnInit() {
-    this.travelinfoRestart();
-    console.log("lista usuario", this.travelinfo)
+  async ngOnInit() {
+    this.listViaje = await firstValueFrom(this.viajesService.getViajes());
+    console.log("lista usuario", this.listViaje)
+
   }
 
   volverinicio(){
     this.router.navigate(['/alumno']);
   }
-  
-  ingresarviaje(){
-    
-    console.log("lista usuario", this.travelinfo)
+
+  modificarViaje(viajeid: string): void {
+    this.viajesService.modificarViaje(viajeid);
+
   }
-  userViaje(userViajeInfo: IViaje){
-    console.log('User Loged...', this.travelinfo.origen, this.travelinfo.destino);
-    let userInfoSend: NavigationExtras = {
-      state: {
-        user: this.travelinfo
+           
+
+  agregarUsuario() {
+    this.viajesService.postAddViajes(this.nuevoViaje).subscribe(
+      (response) => {
+        // Procesa la respuesta aquí
+        console.log('Usuario agregado con éxito:', response);
+        // Limpia el formulario
+        this.nuevoViaje = { id: null,origen: '',destino: '',id_pasajero: null,metodopago:'', };
+      },
+      (error) => {
+        // Maneja los errores aquí
+        console.error('Error al agregar usuario:', error);
       }
-    }
-    if(this.travelinfo.origen == 'valparaiso'){
-      this.router.navigate(['/alumno'], userInfoSend);
-      return true;
-    } else {
-      return false;
-    }
-  }         
-
-  
-
-travelinfoRestart(): void{
-  this.travelinfo.origen='';
-  this.travelinfo.destino='';
-  this.travelinfo.metodopago='';
+    );
   }
+
+
 }

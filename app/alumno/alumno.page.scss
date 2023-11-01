@@ -5,7 +5,7 @@ ion-avatar {
   }
 
 .fondo  {
-    background-image: url(../../assets/login-img/descarga.jpeg);
+    background: url(../../assets/login-img/descarga.jpeg);
     background-repeat: no-repeat;
     margin: 0;
     padding: 0;
@@ -13,4 +13,10 @@ ion-avatar {
     background-position: center;
     height: 30vh; 
     border-radius: 1rem;
+}
+ion-content {
+  --ion-background-color: url(../../assets/img/fondoduoc.png);
+  --color: white;
+  background-repeat: no-repeat;
+  
 }

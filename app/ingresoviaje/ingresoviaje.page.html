@@ -21,29 +21,22 @@
       <ion-col sizeLg="12" sizeMD="12" sizeXs="12" >
         <div id="div-fondo">
           <div>
-            <ion-item>
-              <ion-label position="floating">origen</ion-label>
-              <ion-input type="text"  [(ngModel)]="travelinfo.origen"></ion-input>
-            </ion-item>
-            <ion-item
-              ><ion-label><p></p></ion-label></ion-item>
-            <ion-item>
-              <ion-label position="floating">destino</ion-label>
-              <ion-input 
-                type="text"
-                [(ngModel)]="travelinfo.destino"
-              ></ion-input>
-            </ion-item>
-            <ion-item>
-              <ion-label position="floating">metodo</ion-label>
-              <ion-input 
-     
-              [(ngModel)]="travelinfo.metodopago"
-              ></ion-input>
-            </ion-item>
-            <ion-button expand="block" color="warning" class="fade-out-button"  (click)="userViaje(travelinfo)" >
-              Acceder
-            </ion-button>
+            <div class="nuevo">
+
+              <form >
+                <label for="nombre">Origen:</label>
+                <input type="text" id="origen" name="origen" [(ngModel)]="nuevoViaje.origen" required>
+              
+                <label for="destino">Destino:</label>
+                <input type="destino" id="destino" name="destino" [(ngModel)]="nuevoViaje.destino" required>
+    
+                <label for="metodopago">Metodopago:</label>
+                <input type="metodopago" id="metodopago" name="metodopago" [(ngModel)]="nuevoViaje.metodopago" required>
+              
+    
+              </form>
+    
+            </div>
           
           </div>
           <div>
@@ -53,11 +46,16 @@
             <ion-button expand="block" color="dark" (click)="volverinicio()" >
               volver inicio
             </ion-button>
-            <ion-button expand="block" color="dark" (click)="ingresarviaje()" >
-             ingresar datos
+            <ion-button expand="block" color="dark" (click)="agregarUsuario()">
+              Agregar Viaje
             </ion-button>
+            <ion-button expand="block" color="dark" >
+              Agregar Viaje
+            </ion-button>
+       
           </div>
         </div>
+    
       </ion-col>
     </ion-row>
 
