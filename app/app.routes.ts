@@ -7,7 +7,7 @@ export const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'login',
+    redirectTo: 'intro',
     pathMatch: 'full',
   },
   {
@@ -38,6 +38,11 @@ export const routes: Routes = [
     path: 'auto',
     loadComponent: () => import('./auto/auto.page').then( m => m.AutoPage)
   },
+  {
+    path: 'intro',
+    loadComponent: () => import('./intro/intro.page').then( m => m.IntroPage)
+  },
+
 
 
 ];

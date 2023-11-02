@@ -42,13 +42,13 @@
 }
 
 ion-content {
-    --ion-background-color: url(/assets/img/bg.gif);
+    --ion-background-color: url(/assets/img/bg.gif) no-repeat center center / cover;
     --color: white;
     
 }
 
 ion-header {
-    background: url(/assets/img/bg.gif);
+background: url(./assets/img/logoduoc.png) no-repeat center center / cover;
 }
 
 ion-toolbar {
@@ -69,12 +69,12 @@ ion-card {
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     border: 1px solid rgba(255, 255, 255, 0.3);
-    color: white;
+    color: black;
 }
 
 ion-item {
     --background: transparent;
-    color: white;
+    color: rgb(20, 19, 19);
 }
 
 ion-icon {

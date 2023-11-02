@@ -1,6 +1,5 @@
-#fondo{
-    background-color: #33FFBD;
-}
+
+
 ion-toggle {
     padding: 12px;
   
@@ -32,4 +31,15 @@ ion-toggle {
   
   ion-toggle.toggle-checked::part(handle) {
     background: #95c34e;
+  }
+  ion-list {
+    background: url(../../assets/img/fondoduoc.png);
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    background-position: center;
+    height: 50vh; 
+    border-radius: 1rem;
+    text-align: center;
   }
